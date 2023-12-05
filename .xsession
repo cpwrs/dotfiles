@@ -1,19 +1,19 @@
 #!/bin/ksh
-# X SESSION CONFIG
+# xenodm configuration
 
-# xenodm doesn't use a login shell to run .xsession
-# run login shell config
+
+# Run login shell config (xenodm doesn't start a login shell).
 . /home/carson/.profile
 
-# set background
+# Set the background color.
 xsetroot -solid rgb:22/22/22
 hsetroot -solid "#222222"
 
-# allow local users to access X
+# Allow local users to access X11.
 xhost +local
 
-# remap capslock to ctrl
+# Remap capslock to ctrl.
 setxkbmap -option 'ctrl:swapcaps'
 
-# start window manager with config
+# Start spectrwm window manager.
 exec spectrwm -c /home/carson/.spectrwm.conf
