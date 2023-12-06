@@ -6,8 +6,8 @@
 . /home/carson/.profile
 
 # Set the background color.
-xsetroot -solid rgb:22/22/22
-hsetroot -solid "#222222"
+xsetroot -solid rgb:10/10/10
+hsetroot -solid "#101010"
 
 # Allow local users to access X11.
 xhost +local
