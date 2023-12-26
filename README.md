@@ -1,13 +1,13 @@
 <div align="center">
 
-### dotfiles: User space configurations for a Unix-like development environment. 
+### dotfiles: User space configurations for a Unix-like development environment
 
 </div>
 
 ---
 
 Environment stack:
-Open BSD 7.4 -> Xenocara -> xenodm -> spectrwm -> kitty -> tmux -> ksh -> neovim
+OpenBSD 7.4 -> Xenocara -> xenodm -> spectrwm -> kitty -> tmux -> ksh -> neovim
 
 Theme:
 - Colors: inspired by [bluz71/vim-moonfly-colors](https://github.com/bluz71/vim-moonfly-colors)
