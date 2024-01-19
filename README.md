@@ -22,5 +22,3 @@ dotfiles checkout BRANCH_NAME
 Note: This repository is BARE; the alias allows for managing dotfiles anywhere in the working tree.
 
 ---
-
-*Only two remote holes in the default install, in a heck of a long time!*
