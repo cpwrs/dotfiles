@@ -6,14 +6,13 @@
 . /home/carson/.profile
 
 # Set the background color.
-xsetroot -solid rgb:10/10/10
-hsetroot -solid "#101010"
+xsetroot -solid rgb:08/08/08
 
-# Allow local users to access X11.
-xhost +local
+# Set screen resolution
+xrandr --size 1
 
 # Remap capslock to ctrl.
 setxkbmap -option 'ctrl:swapcaps'
 
 # Start spectrwm window manager.
-exec spectrwm -c /home/carson/.spectrwm.conf
+spectrwm -c /home/carson/.spectrwm.conf

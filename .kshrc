@@ -11,7 +11,11 @@ alias __D="echo "\002""
 alias __H="echo "\001""
 alias __Y="echo "\005""
 
-alias ls="ls -AFt"
+# Volume controls
+alias sk="sndioctl output.level=+0.1"
+alias sj="sndioctl output.level=-0.1"
+alias sm="sndioctl output.mute=!"
+
 alias ll="ls -lS"
 alias temp="print $(sysctl hw.sensors.cpu0.temp0) | cut -d = -f2"
 # Manage bare dotfiles repository from anywhere in the tree.
