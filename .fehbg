@@ -1,0 +1,2 @@
+#!/bin/sh
+/etc/profiles/per-user/carson/bin/feh --no-fehbg --bg-center '/home/carson/background.jpg' 
