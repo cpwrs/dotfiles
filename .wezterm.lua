@@ -40,10 +40,10 @@ config.font = wezterm.font 'Berkeley Mono'
 config.font_size = 14.0
 config.enable_tab_bar = false
 config.window_padding = {
-  left = 4,
-  right = 4,
-  top = 4,
-  bottom = 4,
+  left = 12,
+  right = 12,
+  top = 12,
+  bottom = 12,
 }
 
 return config
