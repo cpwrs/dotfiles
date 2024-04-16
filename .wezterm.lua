@@ -36,7 +36,11 @@ config.colors = {
   },
 }
 
-config.font = wezterm.font 'Berkeley Mono'
+config.font = wezterm.font_with_fallback {
+  'Berkeley Mono',
+  'Hack Nerd Font',
+}
+
 config.font_size = 14.0
 config.enable_tab_bar = false
 config.window_padding = {

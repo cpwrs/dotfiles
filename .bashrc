@@ -44,7 +44,6 @@ prompt_sym () {
 PROMPT_COMMAND='
   exit_code=$?
   PS1=""
-  PS1+="\u@\h:"
   PS1+="$(short_pwd)"
   PS1+="$(git_branch)"
   PS1+="$(prompt_sym)"
