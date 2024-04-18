@@ -1,5 +1,8 @@
 <div align="center">
 
+<<<<<<< HEAD
+### NixOS dotfiles
+=======
 ### dotfiles: User space configurations for a Unix-like development environment
 
 </div>
@@ -22,3 +25,4 @@ dotfiles checkout BRANCH_NAME
 Note: This repository is BARE; the alias allows for managing dotfiles anywhere in the working tree.
 
 ---
+>>>>>>> main
