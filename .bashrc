@@ -48,3 +48,6 @@ PROMPT_COMMAND='
   PS1+="$(git_branch)"
   PS1+="$(prompt_sym)"
 '
+
+# Hook direnv into bash
+eval "$(direnv hook bash)"
