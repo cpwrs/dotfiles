@@ -49,6 +49,13 @@ internet () {
   fi
 }
 
+# Echo the thermal_zone0 temp
+temp () {
+  tempraw=$(cat /sys/class/thermal/thermal_zone0/temp)
+  tempcel=$(expr $tempraw / 1000)
+  echo "󰔏 ${tempcel}C"
+}
+
 # Echo the amount of memory currently being used.
 memory () {
   mem=$(free -m | awk '/^Mem:/{print $3}')
@@ -58,13 +65,13 @@ memory () {
 # Update the bar utilities every five seconds.
 while :; do
   # Display username and window manager workspace info on left.
-  left="+|L󱄅 ${USER}   +L   +M  󰌨 +S"
+  left="+|L󱄅 ${USER}@$(hostname)   +L   +M  󰌨 +S"
 
   # Display date and time in the center.
   center="+|C$(date +"%a %b %d %H:%M")"
 
   # Display utilities from this script on the right.
-  right="+|R$(memory)  $(bluetooth)  $(volume)  $(internet)"
+  right="+|R$(memory)  $(temp)  $(bluetooth)  $(volume)  $(internet)"
 
   echo "${left}${center}${right}"
   sleep 5
