@@ -4,35 +4,35 @@ local config = wezterm.config_builder()
 
 config.colors = {
   foreground = '#f7f7f7',
-  background = '#0d0d0d',
+  background = '#101010',
 
   cursor_bg = '#f7f7f7',
-  cursor_fg = '#0d0d0d',
+  cursor_fg = '#101010',
   cursor_border = "#f7f7f7",
 
   selection_fg = '#161616',
-  selection_bg = '#0d0d0d',
+  selection_bg = '#101010',
 
   ansi = {
     '#1a1a1a',
-    '#ff4353',
-    '#89ffcb',
-    '#fbfbcf',
-    '#ab9bff',
-    '#d7afff',
-    '#bcffff',
+    '#ff909d',
+    '#d3ffdb',
+    '#fdffd1',
+    '#a3b7ff',
+    '#d19cff',
+    '#b2ffff',
     '#f7f7f7',
   },
 
   brights = {
-    '#161616',
-    '#ff7984',
-    '#d3ffdb',
-    '#fffff6',
-    '#b7beff',
-    '#ddc9ff',
-    '#ebffff',
-    '#ffffff',
+    "#313131",
+    "#ff4353",
+    "#89ffcb",
+    "#fdd6b6",
+    "#a3b7ff",
+    "#ffb1f5",
+    "#b2ffff",
+    "#ffffff",
   },
 }
 
@@ -44,10 +44,10 @@ config.font = wezterm.font_with_fallback {
 config.font_size = 14.0
 config.enable_tab_bar = false
 config.window_padding = {
-  left = 8,
-  right = 8,
-  top = 8,
-  bottom = 8,
+  left = 6,
+  right = 6,
+  top = 6,
+  bottom = 6,
 }
 
 return config
