@@ -4,13 +4,13 @@ local config = wezterm.config_builder()
 
 config.colors = {
   foreground = '#f7f7f7',
-  background = '#101010',
+  background = '#1c1714',
 
   cursor_bg = '#f7f7f7',
   cursor_fg = '#101010',
   cursor_border = "#f7f7f7",
 
-  selection_fg = '#161616',
+  selection_fg = '#f7f7f7',
   selection_bg = '#101010',
 
   ansi = {
@@ -41,7 +41,7 @@ config.font = wezterm.font_with_fallback {
   'Hack Nerd Font',
 }
 
-config.font_size = 14.0
+config.font_size = 12.0
 config.enable_tab_bar = false
 config.window_padding = {
   left = 6,
