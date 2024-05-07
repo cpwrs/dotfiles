@@ -5,6 +5,7 @@ export HISTSIZE=5000
 export EDITOR=nvim
 
 # Aliases
+unalias ls
 alias l="ls -la"
 # Manage bare dotfiles repository from anywhere in the tree.
 # Ex: $ dotfiles status
