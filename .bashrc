@@ -15,7 +15,7 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 git_branch () {
   branch="$(git symbolic-ref HEAD 2>/dev/null)" || branch="" # Grab branch if any.
   if ! [ -z "$branch" ]; then # If branch exists ..
-    branch=" (\x01\e[38;2;211;255;219m\x02${branch##refs/heads/}\x01\e[0m\x02)" # Add color
+    branch="(\x01\e[38;2;211;255;219m\x02${branch##refs/heads/}\x01\e[0m\x02)" # Add color
   fi
 
   echo -e "$branch"
