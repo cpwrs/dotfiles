@@ -1,4 +1,4 @@
-User space configurations for my [nixbox](https://github.com/crpowers/nixbox) 
+Configurations for my [nixbox](https://github.com/crpowers/nixbox) 
 
 Install
 ```sh
