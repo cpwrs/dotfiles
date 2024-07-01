@@ -1,6 +1,6 @@
-Configurations for my [nixbox](https://github.com/crpowers/nixbox) 
+### Configurations for my [nixbox](https://github.com/crpowers/nixbox) 
 
-Install
+#### Install
 ```sh
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 git clone --bare git@github:crpowers/dotfiles.git $HOME/.dotfiles
