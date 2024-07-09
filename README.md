@@ -2,8 +2,8 @@
 
 #### Install
 ```sh
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 git clone --bare git@github:crpowers/dotfiles.git $HOME/.dotfiles
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
 dotfiles checkout BRANCH_NAME
 ```
