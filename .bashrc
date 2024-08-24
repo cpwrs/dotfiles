@@ -7,6 +7,7 @@ export EDITOR=nvim
 # Aliases
 unalias ls
 alias l="ls -la"
+alias chrome='/mnt/c/Program\ Files\/Google/Chrome/Application/chrome.exe'
 # Manage bare dotfiles repository from anywhere in the tree.
 # Ex: $ dotfiles status
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
