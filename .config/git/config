@@ -3,3 +3,10 @@
 	email = me@carsonp.net
 [init]
 	defaultBranch = main
+[merge]
+  tool = "nvimdiff"
+  layout = "LOCAL,BASE,REMOTE / MERGED"
+[pull]
+  rebase = false
+[diff]
+  tool = "nvimdiff"

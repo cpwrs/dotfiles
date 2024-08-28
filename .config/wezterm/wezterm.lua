@@ -41,7 +41,7 @@ config.font = wezterm.font_with_fallback {
   'Hack Nerd Font',
 }
 
-config.font_size = 12.0
+config.font_size = 11.0
 config.enable_tab_bar = false
 config.window_padding = {
   left = 5,
