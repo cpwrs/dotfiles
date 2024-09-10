@@ -1,4 +1,5 @@
 # Bourne Again Shell Configuration
+set -o vi
 
 # Environment variables
 export HISTSIZE=5000
@@ -7,9 +8,18 @@ export EDITOR=nvim
 # Aliases
 unalias ls
 alias l="ls -la"
+
+# Git
+alias ga="git add -u"
+alias gs="git status"
+alias gp="git push"
+alias gc="git clone"
+alias gcm="git checkout master"
+
 # Manage bare dotfiles repository from anywhere in the tree.
-# Ex: $ dotfiles status
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# -- Prompt Configuration --
 
 # Return git branch of working directory.
 git_branch () {
