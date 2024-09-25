@@ -30,7 +30,7 @@ RED="\x01\e[38;2;255;67;83m\x02"
 
 # Return git branch of working directory.
 git_branch () {
-  branch="$(git symbolic-ref HEAD 2>/dev/null)" || branch="" # Grab branch if any.
+  local branch="$(git symbolic-ref HEAD 2>/dev/null)" || branch="" # Grab branch if any.
   if ! [ -z "$branch" ]; then # If branch exists ..
     branch="$OFFWHITE on $LIME${branch##refs/heads/}$OFFWHITE$RESET" # Add color, format.
   fi
@@ -39,19 +39,30 @@ git_branch () {
 
 # Return working directory with "$HOME" shortened to "~".
 short_pwd () {
-  pwd="$(pwd | sed "s,^$HOME,~,")" # Grab pwd.
+  local pwd="$(pwd | sed "s,^$HOME,~,")" # Grab pwd.
   pwd="$BRIGHT$(tput bold)${pwd}$RESET" # Add bright color and bold.
   echo -e "$pwd"
 }
 
-# Return the prompt symbol "$", in red or green depending on exit code of last command
+# Return * in red or green depending on exit code of last command
 success () {
   if [ "$exit_code" = 0 ]; then 
-    sym="$GREEN* $RESET"; 
+    local sym="$GREEN*$RESET" 
   else 
-    sym="$RED* $RESET";
+    local sym="$RED*$RESET"
   fi
   echo -e "$sym"
+}
+
+# Return (direnv)
+ifdirenv () {
+  local status=$(echo $DIRENV_DIR)
+  if ! [ -z "$status" ]; then
+    local text="denv"
+    echo -e "$OFFWHITE($RESET${text}$OFFWHITE)$RESET "
+  else
+    echo -e ""
+  fi
 }
 
 # Assemble final interactive shell primary prompt.
@@ -59,7 +70,8 @@ success () {
 PROMPT_COMMAND='
   exit_code=$?
   PS1=""
-  PS1+="$(success)"
+  PS1+="$(success) "
+  PS1+="$(ifdirenv)"
   PS1+="$(short_pwd)"
   PS1+="$(git_branch)"
   PS1+=" $ "
