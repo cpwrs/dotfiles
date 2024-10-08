@@ -10,11 +10,10 @@ unalias ls
 alias l="ls -la"
 
 # Git
-alias ga="git add -u"
+alias ga="git add"
 alias gs="git status"
 alias gp="git push"
-alias gc="git clone"
-alias gcm="git checkout master"
+alias gc="git checkout"
 
 # Manage bare dotfiles repository from anywhere in the tree.
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
