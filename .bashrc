@@ -14,6 +14,10 @@ alias ga="git add"
 alias gs="git status"
 alias gp="git push"
 alias gc="git checkout"
+alias gd="git diff"
+alias gr="git restore"
+alias grs="git restore --staged"
+alias gcm="git commit -m"
 
 # Manage bare dotfiles repository from anywhere in the tree.
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
