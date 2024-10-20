@@ -2,6 +2,10 @@
 # This file echos a string that will be processed and displayed on the spectrwm bar.
 # Any spectrwm bar_format character sequences will be expanded.
 
+# Text markup sequences
+BOLD="+@fn=1;+@fg=1;"
+REGULAR="+@fn=0;+@fg=0;"
+
 # Echo the name(s) of connected bluetooth 
 # device(s) via BlueZ (bluetoothctl).
 bluetooth () {
@@ -16,7 +20,7 @@ bluetooth () {
   )
   
   if ! [ -z "$con" ]; then
-    con="󰂯 ${con}"
+    con="󰂯 ${BOLD}${con}${REGULAR}"
   else
     con="󰂲"
   fi
@@ -29,15 +33,7 @@ volume () {
   vol=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
   vol=${vol::-1}
 
-  if [ "$vol" -eq 0 ]; then
-    echo "󰖁"
-   elif [ "$vol" -lt 33 ]; then
-    echo "󰕿"
-  elif [ "$vol" -lt 66 ]; then
-    echo "󰖀"
-  else
-    echo "󰕾"
-  fi
+  echo -e "Vol ${BOLD}${vol}%${REGULAR}"
 }
 
 # Echo an icon representing internet connectivity.
@@ -53,25 +49,25 @@ internet () {
 temp () {
   tempraw=$(cat /sys/class/thermal/thermal_zone0/temp)
   tempcel=$(expr $tempraw / 1000)
-  echo "󰔏 ${tempcel}C"
+  echo "Temp ${BOLD}${tempcel}C${REGULAR}"
 }
 
 # Echo the amount of memory currently being used.
 memory () {
   mem=$(free -m | awk '/^Mem:/{print $3}')
-  echo "󰍛 ${mem}MiB"
+  echo "Mem ${BOLD}${mem}MiB${REGULAR}"
 }
 
 # Update the bar utilities every five seconds.
 while :; do
   # Display username and window manager workspace info on left.
-  left="+|L󱄅 ${USER}@$(hostname)   +L   +M  󰌨 +S"
+  left="+|L󱄅 ${BOLD}${USER}@$(hostname)${REGULAR}  Space ${BOLD}+L${REGULAR}  Hidden ${BOLD}+M${REGULAR}  Stack ${BOLD}+S${REGULAR}"
 
   # Display date and time in the center.
   center="+|C$(date +"%a %b %d %H:%M")"
 
   # Display utilities from this script on the right.
-  right="+|R$(memory)  $(temp)  $(bluetooth)  $(volume)  $(internet)"
+  right="+|R$(memory)  $(temp)  $(volume)  $(bluetooth)  $(internet)"
 
   echo "${left}${center}${right}"
   sleep 5
