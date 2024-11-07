@@ -3,17 +3,17 @@
 ## Black / White
 - black #1c1714
 - dark #12100e
-- white "#f7f7f7
+- white #f7f7f7
 - offwhite #adabab
-- bright = #ffffff
+- bright #ffffff
 
 ## Greys (lightest to darkest)
-- grey1 = #625f5f
-- grey2 = "#544f4d
-- grey3 = "#45403d
-- grey4 = #3b3531
-- grey5 = #322c27
-- grey6 = #25201b
+- grey1 #625f5f
+- grey2 #544f4d
+- grey3 #45403d
+- grey4 #3b3531
+- grey5 #322c27
+- grey6 #25201b
 
 ## Colors
 - orange #ffb699
