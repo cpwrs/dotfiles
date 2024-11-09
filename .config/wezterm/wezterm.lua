@@ -44,10 +44,10 @@ config.font = wezterm.font_with_fallback {
 config.font_size = 11.0
 config.enable_tab_bar = false
 config.window_padding = {
-  left = 5,
-  right = 5,
-  top = 5,
-  bottom = 5,
+  left = 4,
+  right = 4,
+  top = 4,
+  bottom = 4,
 }
 
 return config
