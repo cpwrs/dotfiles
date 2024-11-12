@@ -18,7 +18,7 @@
 ## Colors
 - orange #ffb699
 - cream #fdffd1
-- red #ff4353
+- red #ff5766
 - melon #ff909d
 - green #89ffcb
 - tea #d3ffdb
