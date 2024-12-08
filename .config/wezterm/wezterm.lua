@@ -7,11 +7,11 @@ config.colors = {
   background = '#1c1714',
 
   cursor_bg = '#f7f7f7',
-  cursor_fg = '#101010',
+  cursor_fg = '#1c1714',
   cursor_border = "#f7f7f7",
 
-  selection_fg = '#f7f7f7',
-  selection_bg = '#101010',
+  selection_bg = '#f7f7f7',
+  selection_fg = '#3b3531',
 
   ansi = {
     '1c1714',
@@ -31,7 +31,7 @@ config.colors = {
     "#ffb699",
     "#aec1ff",
     "#ffb1f5",
-    "#aec1ff",
+    "#c9fafa",
     "#ffffff",
   },
 }
