@@ -50,4 +50,7 @@ config.window_padding = {
   bottom = 4,
 }
 
+-- Wezterm is broken on nixpkgs 24.11, this gets around the bug for now
+config.front_end = "WebGpu"
+
 return config
