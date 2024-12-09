@@ -51,6 +51,6 @@ config.window_padding = {
 }
 
 -- Wezterm is broken on nixpkgs 24.11, this gets around the bug for now
-config.front_end = "WebGpu"
+config.front_end = "OpenGL"
 
 return config
