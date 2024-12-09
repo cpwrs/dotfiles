@@ -28,12 +28,10 @@ bluetooth () {
   echo "$con"
 }
 
-# Echo an icon representing volume from amixer Master.
+# Echo an icon representing default sink volume from wireplumber. 
 volume () {
-  vol=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
-  vol=${vol::-1}
-
-  echo -e "Vol ${BOLD}${vol}%${REGULAR}"
+  vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f%\n", $2*100}')
+  echo -e "Vol ${BOLD}${vol}${REGULAR}"
 }
 
 # Echo an icon representing internet connectivity.
