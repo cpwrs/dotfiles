@@ -51,6 +51,7 @@ config.window_padding = {
 }
 
 -- Wezterm is broken on nixpkgs 24.11, this gets around the bug for now
+config.max_fps = 144
 config.front_end = "OpenGL"
 
 return config
