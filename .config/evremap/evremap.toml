@@ -4,6 +4,6 @@ phys = "usb-0000:00:14.0-8/input0"
 # Configure CAPSLOCK as a Dual Role key.
 # Holding it produces LEFTCTRL, but tapping it will produce ESC.
 [[dual_role]]
-input = "KEY_CAPSLOCK"
+input = "KEY_LEFTCTRL"
 hold = ["KEY_LEFTCTRL"]
 tap = ["KEY_ESC"]
