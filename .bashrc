@@ -6,7 +6,6 @@ export HISTSIZE=5000
 export EDITOR=nvim
 
 # Aliases
-unalias ls
 alias l="ls -la"
 
 # Git
