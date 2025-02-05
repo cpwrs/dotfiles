@@ -7,31 +7,31 @@ config.colors = {
   background = '#1c1714',
 
   cursor_bg = '#f7f7f7',
-  cursor_fg = '#101010',
+  cursor_fg = '#1c1714',
   cursor_border = "#f7f7f7",
 
-  selection_fg = '#f7f7f7',
-  selection_bg = '#101010',
+  selection_bg = '#f7f7f7',
+  selection_fg = '#3b3531',
 
   ansi = {
-    '#1a1a1a',
+    '1c1714',
     '#ff909d',
     '#d3ffdb',
     '#fdffd1',
-    '#a3b7ff',
+    '#aec1ff',
     '#d19cff',
-    '#b2ffff',
+    '#c9fafa',
     '#f7f7f7',
   },
 
   brights = {
-    "#313131",
-    "#ff4353",
+    "#12100e",
+    "#ff5766",
     "#89ffcb",
-    "#fdd6b6",
-    "#a3b7ff",
+    "#ffb699",
+    "#aec1ff",
     "#ffb1f5",
-    "#b2ffff",
+    "#c9fafa",
     "#ffffff",
   },
 }
@@ -41,13 +41,17 @@ config.font = wezterm.font_with_fallback {
   'Hack Nerd Font',
 }
 
-config.font_size = 12.0
+config.font_size = 11.0
 config.enable_tab_bar = false
 config.window_padding = {
-  left = 5,
-  right = 5,
-  top = 5,
-  bottom = 5,
+  left = 2,
+  right = 2,
+  top = 2,
+  bottom = 2,
 }
+
+-- Wezterm is broken on nixpkgs 24.11, this gets around the bug for now
+config.max_fps = 144
+config.front_end = "OpenGL"
 
 return config
