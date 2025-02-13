@@ -40,6 +40,7 @@ config.font = wezterm.font_with_fallback {
   'Berkeley Mono',
   'Hack Nerd Font',
 }
+config.line_height = 0.9
 
 config.font_size = 11.0
 config.enable_tab_bar = false
