@@ -37,7 +37,7 @@ config.colors = {
 }
 
 config.font = wezterm.font_with_fallback {
-  'Berkeley Mono',
+  'Berkeley Mono Condensed',
   'Hack Nerd Font',
 }
 config.line_height = 0.9

@@ -11,7 +11,8 @@ alias l="ls -la"
 # Git
 alias ga="git add"
 alias gs="git status"
-alias gp="git push"
+alias gP="git push"
+alias gp="git pull"
 alias gc="git checkout"
 alias gd="git diff"
 alias gr="git restore"
@@ -59,14 +60,50 @@ ifdirenv () {
 # Assemble final interactive shell primary prompt.
 # Must set exit_code global, which is used by prompt symbol
 PROMPT_COMMAND='
-  exit_code=$?
-  PS1=""
-  PS1+="$(success) "
-  PS1+="$(ifdirenv)"
-  PS1+="$(short_pwd)"
-  PS1+="$(git_branch)"
-  PS1+=" $ "
+exit_code=$?
+PS1=""
+PS1+="$(success) "
+PS1+="$(ifdirenv)"
+PS1+="$(short_pwd)"
+PS1+="$(git_branch)"
+PS1+=" $ "
 '
+
+# Set up a tmux session with the windows I like
+sesh () {
+  # Check that a path parameter is provided
+  if [ $# -eq 1 ]; then
+    path=$1
+  else
+    path=$(find ~/proj ~/uni -mindepth 1 -maxdepth 1 -type d | fzf)
+  fi
+
+  # Check that it exists and is a directory
+  if [ ! -d "$path" ]; then
+    echo "Error: Directory '$path' does not exist"
+    return 1
+  fi
+
+  # Sanitize the session name
+  dir=$(basename "$path" | tr '.' '-')
+
+  if ! tmux has-session -t "$dir" 2>/dev/null; then
+    tmux new-session -d -s "$dir" -c "$path"
+    tmux send-keys -t "$dir:0" 'nvim' C-m # Open nvim window 0
+    tmux new-window -t "$dir:1" -c "$path" # Term in window 1
+
+    # Lazygit in window 2 if it's a repo
+    if [ -d "$path/.git" ]; then
+      tmux new-window -t "$dir:2" -c "$path"
+      tmux send-keys -t "$dir:2" 'lazygit' C-m
+    fi
+
+    # Select window 0
+    tmux select-window -t "$dir:0"
+  fi
+
+  tmux attach -t "$dir"
+}
 
 # Hook direnv into bash
 eval "$(direnv hook bash)"
