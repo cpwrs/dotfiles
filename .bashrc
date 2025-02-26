@@ -2,7 +2,7 @@
 set -o vi
 
 # Environment
-export HISTSIZE=5000
+export HISTSIZE=2000
 export EDITOR=nvim
 
 # My scripts
