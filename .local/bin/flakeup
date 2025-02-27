@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+FLAKE_FILE="$HOME/.config/flake_template/flake.nix"
+DIRENV_FILE="$HOME/.config/flake_template/.envrc"
+
+if [ ! -f "$FLAKE_FILE" ] || [ ! -f "$DIRENV_FILE" ]; then
+  echo "Error: Required template files not found in $HOME/.config/flake_template"
+  exit 1
+fi
+
+cp "$FLAKE_FILE" .
+cp "$DIRENV_FILE" .
+
+echo "Successfully created a devShell hooked to direnv."
+exit 1

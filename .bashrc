@@ -2,8 +2,11 @@
 set -o vi
 
 # Environment
-export HISTSIZE=5000
+export HISTSIZE=2000
 export EDITOR=nvim
+
+# My scripts
+export PATH="$HOME/.local/bin:$PATH"
 
 # Aliases
 alias l="ls -la"
@@ -11,7 +14,8 @@ alias l="ls -la"
 # Git
 alias ga="git add"
 alias gs="git status"
-alias gp="git push"
+alias gp="git pull"
+alias gP="git push"
 alias gc="git checkout"
 alias gd="git diff"
 alias gr="git restore"
