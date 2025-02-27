@@ -37,7 +37,7 @@ config.colors = {
 }
 
 config.font = wezterm.font_with_fallback {
-  'Berkeley Mono',
+  'Berkeley Mono SemiCondensed',
   'Hack Nerd Font',
 }
 
