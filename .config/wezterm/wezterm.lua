@@ -42,12 +42,13 @@ config.font = wezterm.font_with_fallback {
 }
 
 config.font_size = 11.0
+config.line_height = 0.9
 config.enable_tab_bar = false
 config.window_padding = {
-  left = 2,
-  right = 2,
-  top = 2,
-  bottom = 2,
+  left = 4,
+  right = 4,
+  top = 5,
+  bottom = 5,
 }
 
 -- Wezterm is broken on nixpkgs 24.11, this gets around the bug for now
