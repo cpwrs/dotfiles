@@ -8,8 +8,13 @@ if [ ! -f "$FLAKE_FILE" ] || [ ! -f "$DIRENV_FILE" ]; then
   exit 1
 fi
 
-cp "$FLAKE_FILE" .
-cp "$DIRENV_FILE" .
+if [ ! -f "flake.nix" ]; then 
+  cp "$FLAKE_FILE" . 
+fi
+
+if [ ! -f ".envrc" ]; then
+  cp "$DIRENV_FILE" .
+fi
 
 echo "Successfully created a devShell hooked to direnv."
-exit 1
+exit 0

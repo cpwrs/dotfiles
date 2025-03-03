@@ -32,3 +32,4 @@ if ! tmux has-session -t "$dir" 2>/dev/null; then
 fi
 
 tmux attach -t "$dir"
+exit 0
