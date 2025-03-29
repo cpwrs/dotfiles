@@ -3,6 +3,7 @@ set -o vi
 
 # Environment
 export HISTSIZE=2000
+export FZF_DEFAULT_OPTS="--tmux 80% --border-label ' fzf ' --border"
 export EDITOR=nvim
 
 # My scripts
@@ -10,6 +11,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Aliases
 alias l="ls -la"
+alias d="tmux detach"
 
 # Git
 alias ga="git add"
