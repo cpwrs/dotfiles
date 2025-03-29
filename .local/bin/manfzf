@@ -17,7 +17,7 @@ else
   INIT_QUERY=""
 fi
 
-selected=$(man -k . | grep "\($SECTION\)" | \
+selected=$(apropos . | grep "\($SECTION\)" | \
   fzf --prompt="man $SECTION> " \
       $INIT_QUERY \
       --preview "echo {1} | xargs man $SECTION" \
