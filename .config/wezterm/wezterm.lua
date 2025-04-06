@@ -14,7 +14,7 @@ config.colors = {
   selection_fg = '#3b3531',
 
   ansi = {
-    '1c1714',
+    '#1c1714',
     '#ff909d',
     '#d3ffdb',
     '#fdffd1',
