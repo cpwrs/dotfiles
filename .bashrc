@@ -3,7 +3,7 @@ set -o vi
 
 # Environment
 export HISTSIZE=2000
-export FZF_DEFAULT_OPTS="--tmux 80% --border-label ' fzf ' --border"
+export FZF_DEFAULT_OPTS="--color 16 --tmux 80% --border-label ' fzf ' --border"
 export EDITOR=nvim
 
 # My scripts

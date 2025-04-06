@@ -41,17 +41,16 @@ config.font = wezterm.font_with_fallback {
   'Hack Nerd Font',
 }
 
-config.font_size = 11.0
+config.font_size = 12.0
 config.line_height = 0.9
 config.enable_tab_bar = false
 config.window_padding = {
-  left = 4,
-  right = 4,
-  top = 5,
-  bottom = 5,
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
 }
 
--- Wezterm is broken on nixpkgs 24.11, this gets around the bug for now
 config.max_fps = 144
 config.front_end = "OpenGL"
 
