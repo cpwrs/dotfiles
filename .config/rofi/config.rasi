@@ -12,7 +12,7 @@ configuration {
 window {
   background-color: @bg;
   text-color: @offwhite;
-  width: 30%;
+  width: 25%;
   padding: 10px;
   border: 2px;
   border-color: #ffb699;
