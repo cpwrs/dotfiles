@@ -2,7 +2,7 @@
 	name = Carson Powers
 	email = me@carsonp.net
 [init]
-	defaultBranch = main
+	defaultBranch = trunk
 [branch]
   sort = -committerdate
 [column]
