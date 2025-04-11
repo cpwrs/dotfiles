@@ -1,5 +1,7 @@
 ### Configurations for my [nixbox](https://github.com/crpowers/nixbox) 
 
+Stack: NixOS -> X11 -> spectrwm -> wezterm -> bash -> tmux -> neovim
+
 #### Install
 ```sh
 git clone --bare git@github:cpwrs/dotfiles.git $HOME/.dotfiles
