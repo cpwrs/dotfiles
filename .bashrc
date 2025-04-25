@@ -6,8 +6,7 @@ export HISTSIZE=2000
 export FZF_DEFAULT_OPTS="
   --color 16 \
   --color 'border:#322c27' \
-  --tmux bottom,50% \
-  --height 50%
+  --tmux center,70% \
   --border-label ' fzf ' \
   --border \
 "
