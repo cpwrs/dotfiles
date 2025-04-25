@@ -1,3 +1,4 @@
+# Copy over template flake.nix and .envrc files for a new project
 #!/usr/bin/env bash
 
 FLAKE_FILE="$HOME/.config/flake_template/flake.nix"

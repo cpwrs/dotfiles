@@ -1,3 +1,4 @@
+# Fzf for a page in a man section
 #!/usr/bin/env bash
 
 set -e

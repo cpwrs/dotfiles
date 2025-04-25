@@ -1,7 +1,7 @@
 # -- Bourne Again Shell Configuration --
 set -o vi
 
-# Environment
+# -- Environment --
 export HISTSIZE=2000
 export FZF_DEFAULT_OPTS="
   --color 16 \
@@ -15,7 +15,8 @@ export EDITOR=nvim
 # My scripts
 export PATH="$HOME/.local/bin:$PATH"
 
-# Aliases
+# -- Aliases --
+#
 alias l="ls -la"
 alias d="tmux detach"
 
@@ -30,10 +31,14 @@ alias gr="git restore"
 alias grs="git restore --staged"
 alias gcm="git commit -m"
 
+# Manage bare dotfiles repository from anywhere in the tree
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
 # Change default sink volume with wireplumber
 volume() {
   if [ $# -eq 0 ]; then
-    echo "Usage: volume [up|down|<percentage>"
+    wpctl get-volume @DEFAULT_AUDIO_SINK@
+    echo "Usage: volume [up|down|<percentage>]"
     return 1
   fi
 
@@ -54,9 +59,6 @@ volume() {
   esac
 }
 
-# Manage bare dotfiles repository from anywhere in the tree.
-alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-
 # -- Prompt Configuration --
 
 RESET="\x01\e[0m\x02" 
@@ -67,26 +69,26 @@ OFFWHITE="\x01\e[38;2;173;171;171m\x02"
 GREEN="\x01\e[38;2;137;255;203m\x02"
 RED="\x01\e[38;2;255;67;83m\x02"
 
-git_branch () {
+_git_branch () {
   local branch="$(git symbolic-ref --short HEAD 2>/dev/null)"
   if [ "$branch" ]; then 
     echo -e "$OFFWHITE on $LIME${branch}$OFFWHITE$RESET" 
   fi
 }
 
-short_pwd () {
+_short_pwd () {
   local pwd="$(pwd | sed "s,^$HOME,~,")" # Grab pwd, shorten $HOME to "~".
   echo -e "$BRIGHT$BOLD${pwd}$RESET" # Add bright color and bold.
 }
 
 # Return * in red or green depending on exit code of last command.
-success () {
+_success () {
   local sym="$([ "$exit_code" -eq 0 ] && echo "$GREEN*" || echo "$RED*")"
   echo -e "$sym"
 }
 
 # Return indicator if in a direnv dev environment
-ifdirenv () {
+_ifdirenv () {
   if [ "$DIRENV_DIR" ]; then
     echo -e "$OFFWHITE(denv)$RESET "
   fi
@@ -97,10 +99,10 @@ ifdirenv () {
 PROMPT_COMMAND='
   exit_code=$?
   PS1=""
-  PS1+="$(success) "
-  PS1+="$(ifdirenv)"
-  PS1+="$(short_pwd)"
-  PS1+="$(git_branch)"
+  PS1+="$(_success) "
+  PS1+="$(_ifdirenv)"
+  PS1+="$(_short_pwd)"
+  PS1+="$(_git_branch)"
   PS1+=" $ "
 '
 
