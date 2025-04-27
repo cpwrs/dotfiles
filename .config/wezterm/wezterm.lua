@@ -54,4 +54,6 @@ config.window_padding = {
 config.max_fps = 144
 config.front_end = "OpenGL"
 
+config.default_prog = { "tmux", "new-session", "-A", "-s", "scripting" }
+
 return config

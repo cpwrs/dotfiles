@@ -28,9 +28,14 @@ if ! tmux has-session -t "$dir" 2>/dev/null; then
     tmux send-keys -t "$dir:2" 'lazygit' C-m
   fi
 
-# Select window 0
+  # Select window 0
   tmux select-window -t "$dir:0"
 fi
 
-tmux attach -t "$dir"
+if [ -n "$TMUX" ]; then
+  tmux switch-client -t "$dir"
+else 
+  tmux attach -t "$dir"
+fi
+
 exit 0
