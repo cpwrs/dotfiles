@@ -1,5 +1,5 @@
-# Choose a project dir with fzf and create a tmux session for it with neovim and bash windows open
 #!/usr/bin/env bash
+# Choose a project dir with fzf and create a tmux session for it with neovim and bash windows open
 
 # Check that a path parameter is provided
 if [ $# -eq 1 ]; then

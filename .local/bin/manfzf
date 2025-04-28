@@ -1,5 +1,5 @@
-# Fzf for a page in a man section
 #!/usr/bin/env bash
+# Fzf for a page in a man section
 
 set -e
 
