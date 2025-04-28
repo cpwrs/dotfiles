@@ -33,31 +33,6 @@ alias gcm="git commit -m"
 # Manage bare dotfiles repository from anywhere in the tree
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
-# Change default sink volume with wireplumber
-volume() {
-  if [ $# -eq 0 ]; then
-    wpctl get-volume @DEFAULT_AUDIO_SINK@
-    echo "Usage: volume [up|down|<percentage>]"
-    return 1
-  fi
-
-  case "$1" in
-    up)
-      wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-      ;;
-    down)
-      wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-      ;;
-    [0-9]|[0-9][0-9]|100)
-      wpctl set-volume @DEFAULT_AUDIO_SINK@ "$1"%
-      ;;
-    *)
-      echo "Invalid argument. Use 'up', 'down', or a number 0-100"
-      return 1
-      ;;
-  esac
-}
-
 # -- Prompt Configuration --
 
 RESET="\x01\e[0m\x02" 
