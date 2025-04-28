@@ -16,7 +16,6 @@ export EDITOR=nvim
 export PATH="$HOME/.local/bin:$PATH"
 
 # -- Aliases --
-#
 alias l="ls -la"
 alias d="tmux detach"
 
