@@ -42,6 +42,7 @@ BRIGHT="\x01\e[38;2;255;255;255m\x02"
 OFFWHITE="\x01\e[38;2;173;171;171m\x02"
 GREEN="\x01\e[38;2;137;255;203m\x02"
 RED="\x01\e[38;2;255;67;83m\x02"
+BLUE="\x01\e[38;2;174;193;255m\x02"
 
 _git_branch () {
   local branch="$(git symbolic-ref --short HEAD 2>/dev/null)"
@@ -57,14 +58,14 @@ _short_pwd () {
 
 # Return * in red or green depending on exit code of last command.
 _success () {
-  local sym="$([ "$exit_code" -eq 0 ] && echo "$GREEN*" || echo "$RED*")"
+  local sym="$([ "$exit_code" -eq 0 ] && echo "$GREEN^$RESET" || echo "$RED^$RESET")"
   echo -e "$sym"
 }
 
-# Return indicator if in a direnv dev environment
-_ifdirenv () {
-  if [ "$DIRENV_DIR" ]; then
-    echo -e "$OFFWHITE(denv)$RESET "
+#v Return indicator if in a direnv dev environment
+_ifnixshell () {
+  if [ "$IN_NIX_SHELL" ]; then
+    echo -e "$OFFWHITE in ${BLUE}*nix$RESET"
   fi
 }
 
@@ -74,9 +75,9 @@ PROMPT_COMMAND='
   exit_code=$?
   PS1=""
   PS1+="$(_success) "
-  PS1+="$(_ifdirenv)"
   PS1+="$(_short_pwd)"
   PS1+="$(_git_branch)"
+  PS1+="$(_ifnixshell)"
   PS1+=" $ "
 '
 
