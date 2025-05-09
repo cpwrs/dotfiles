@@ -22,12 +22,6 @@ if ! tmux has-session -t "$dir" 2>/dev/null; then
   tmux send-keys -t "$dir:0" 'nvim' C-m # Open nvim window 0
   tmux new-window -t "$dir:1" -c "$path" # Term in window 1
 
-  # Lazygit in window 2 if it's a repo
-  if [ -d "$path/.git" ]; then
-    tmux new-window -t "$dir:2" -c "$path"
-    tmux send-keys -t "$dir:2" 'lazygit' C-m
-  fi
-
   # Select window 0
   tmux select-window -t "$dir:0"
 fi
