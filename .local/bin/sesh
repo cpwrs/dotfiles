@@ -13,7 +13,7 @@ while IFS=':' read -ra PATHS; do
   for search_dir in "${PATHS[@]}"; do
     expanded_dir=$(eval echo "$search_dir")
     if [ -d "$expanded_dir" ]; then
-      found=$(find "$expanded_dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)
+      found=$(find "$expanded_dir" -mindepth 0 -maxdepth 1 -type d 2>/dev/null)
       sesh_paths="${sesh_paths}${found}"$'\n'
     fi
   done
