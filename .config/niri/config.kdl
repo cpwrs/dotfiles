@@ -8,6 +8,10 @@ cursor {
   xcursor-size 20
 }
 
+output "eDP-1" {
+  scale 1.666
+}
+
 layout {
   gaps 8
   center-focused-column "on-overflow"

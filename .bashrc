@@ -6,6 +6,7 @@ export FZF_DEFAULT_OPTS='--color 16'
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 
+export SESH_PATH="$HOME/os:$HOME/Downloads:$HOME/proj:$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
 
 # -- Aliases --

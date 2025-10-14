@@ -22,6 +22,7 @@ palette = 14=#95fbfb
 palette = 15=#ffffff
 
 font-family = "Berkeley Mono"
+font-size = 14
 # Getting 4x scroll, 0.25 behaves like other terminals
 mouse-scroll-multiplier = 0.25
 
