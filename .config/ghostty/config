@@ -28,6 +28,6 @@ mouse-scroll-multiplier = 0.25
 command = "tmux new-session -A -s scripting"
 gtk-single-instance = false
 
-window-padding-x = 1
-window-padding-y = 1
+window-padding-x = 6
+window-padding-y = 6
 window-decoration = false
