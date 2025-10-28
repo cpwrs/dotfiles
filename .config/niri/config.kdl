@@ -17,7 +17,7 @@ output "eDP-1" {
 }
 
 layout {
-  gaps 8
+  gaps 0
   center-focused-column "on-overflow"
 
   preset-column-widths {
@@ -38,8 +38,8 @@ layout {
   }
 
   border {
-    width 1
-    active-color "#aa93ff"
+    width 2
+    active-color "#7b6d68"
     inactive-color "#524844"
     urgent-color "#ffb699"
   }
@@ -67,7 +67,7 @@ animations {
 }
 
 window-rule {
-  geometry-corner-radius 7
+  geometry-corner-radius 0
   clip-to-geometry true
 }
 
