@@ -7,6 +7,7 @@ export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 
 export PATH="$HOME/.local/bin:$PATH"
+export SESH_PATH="$HOME/proj:$HOME/Downloads:$HOME/os:$HOME/uni:$HOME/clones"
 
 # -- Aliases --
 alias l="ls -la"
