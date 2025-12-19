@@ -4,12 +4,12 @@ input {
 }
 
 cursor {
-  xcursor-theme "Bibata-Modern-Classic"
+  xcursor-theme "Bibata-Original-Ice"
   xcursor-size 20
 }
 
 layout {
-  gaps 0
+  gaps 10
   center-focused-column "on-overflow"
 
   preset-column-widths {
@@ -25,23 +25,20 @@ layout {
 
   default-column-width { proportion 0.5; }
 
-  focus-ring {
-    off
+  focus-ring { 
+    off 
   }
-
   border {
-    width 2
-    active-color "#7b6d68"
-    inactive-color "#524844"
-    urgent-color "#ffb699"
+    off
   }
 
   shadow {
     on
-    softness 45
+    softness 25
     spread 5
     offset x=0 y=0
-    color "#0007"
+    color "#0e0c0a99"
+    inactive-color "0e0c0a66"
   }
 }
 
@@ -63,11 +60,15 @@ window-rule {
   clip-to-geometry true
 }
 
+window-rule {
+
+}
+
 binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
 
   Mod+T hotkey-overlay-title="Open ghostty" { spawn "ghostty"; }
-  Mod+B hotkey-overlay-title="Open brave" { spawn "brave"; }
+  Mod+B hotkey-overlay-title="Open brave" { spawn "helium"; }
 
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
   XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
