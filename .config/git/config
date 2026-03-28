@@ -3,6 +3,8 @@
 [user]
 	name = Carson Powers
 	email = me@carsonp.net
+  signingkey = ~/.ssh/id_ed25519.pub
+
 [init]
 	defaultBranch = trunk
 
@@ -11,8 +13,6 @@
   format = ssh
 [gpg "ssh"]
   allowedSignersFile = ~/.config/git/allowed_signers
-[user] 
-  signingkey = ~/.ssh/id_ed25519.pub
 [commit]
   gpgsign = true
 
