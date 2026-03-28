@@ -5,28 +5,51 @@
 	email = me@carsonp.net
 [init]
 	defaultBranch = trunk
+
+# Sign commits using my SSH pubkey
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  allowedSignersFile = ~/.config/git/allowed_signers
+[user] 
+  signingkey = ~/.ssh/id_ed25519.pub
+[commit]
+  gpgsign = true
+
 [branch]
-  sort = -committerdate
+  sort = -committerdate # Sort branch list by most recent commit date
 [column]
-  ui = auto
+  ui = auto # Put branch names in column format to see more per screen
 [tag]
-  sort = version:refname
+  sort = version:refname # Sort tags the way you'd expect
 [diff]
   algorithm = histogram
-  colorMoved = plain
-  mnemonicPrefix = true
-  renames = true
+  colorMoved = plain # Show moved lines of code in a different color than added/deleted
+  mnemonicPrefix = true # Replace a/ b/ with i/ (index), w/ (working dir), c/ (commit)
+  renames = true # Detect if a file has been renamed
 [push]
-  autoSetupRemote = true
-  followTags = true
+  autoSetupRemote = true # Automatically set the upstream branch to the local branch name
+  followTags = true # Push all tags that ou have locally every time
 [pull]
   rebase = true
+
+# Make sure we delete origin/x if x is deleted in the server,
+# and also do it automatically for all the remotes we have configured
 [fetch]
   prune = true
   pruneTags = true
   all = true
+
+# Reuse recorded resolutions.
+# Make sure it records the before and after states of rebase conflicts and reapply them when seen
 [rerere]
   enabled = true
   autoupdate = true
+
+# Take stacked refs in a branch and make sure they're also moved when a branch is rebased.
 [rebase]
   updateRefs = true
+
+# Use neovim for diff
+[merge]
+  tool = nvimdiff
