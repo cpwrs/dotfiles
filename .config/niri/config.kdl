@@ -10,6 +10,7 @@ cursor {
 
 layout {
   gaps 10
+
   center-focused-column "on-overflow"
 
   preset-column-widths {
@@ -29,12 +30,16 @@ layout {
     off 
   }
   border {
-    off
+    on
+    width 0
+    inactive-color "#c2bebc"
+    active-color "#8bc2a6"
+    urgent-color "#ffb699"
   }
 
   shadow {
     on
-    softness 25
+    softness 45
     spread 5
     offset x=0 y=0
     color "#0e0c0a99"

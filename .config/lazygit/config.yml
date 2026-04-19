@@ -1,0 +1,11 @@
+gui:
+  nerdFontsVersion: "3"
+  border: "single"
+  theme:
+    activeBorderColor:
+      - "#aa93ff"
+      - bold
+    inactiveBorderColor:
+      - "#3d3028"
+    searchingActiveBorderColor:
+      - "white"
