@@ -8,8 +8,13 @@ cursor {
   xcursor-size 20
 }
 
+output "DP-2" {
+  transform "90"
+  mode "2560x1440"
+}
+
 layout {
-  gaps 10
+  gaps 6
 
   center-focused-column "on-overflow"
 
@@ -31,7 +36,7 @@ layout {
   }
   border {
     on
-    width 0
+    width 1
     inactive-color "#c2bebc"
     active-color "#8bc2a6"
     urgent-color "#ffb699"
@@ -60,7 +65,7 @@ animations {
 }
 
 window-rule {
-  geometry-corner-radius 0
+  geometry-corner-radius 3
   clip-to-geometry true
 }
 
